@@ -1,6 +1,6 @@
 # Indie8Bits
 
-Primer prototipo de juego indie estilo 8-bit inspirado en aventuras clásicas de exploración, con una base pensada para crecer hacia algo tipo Zelda/Pokémon: mapa, personaje, NPCs, diálogos, objetos, misiones y progresión.
+Juego indie 8-bit en desarrollo, inspirado en aventuras clásicas de exploración tipo Zelda/Pokémon. La meta no es una demo técnica, sino un juego jugable, divertido y mantenible desde el principio.
 
 ## Estado actual
 
@@ -13,6 +13,40 @@ Versión inicial jugable en web:
 - NPC inicial con diálogo.
 - Primer objeto clave: Cristal Celeste.
 - Primer loop de misión: hablar, explorar, recoger objeto y volver.
+
+## Regla de orden obligatoria
+
+Ningún archivo de código debe superar las 200 líneas.
+
+Objetivo sano:
+
+- Ideal: 120 a 160 líneas por archivo.
+- Alerta: 180 líneas.
+- Límite máximo: 200 líneas.
+
+Antes de seguir agregando funcionalidades, correr:
+
+```bash
+npm run check:lines
+```
+
+La regla completa está en:
+
+```txt
+docs/PROJECT_RULES.md
+```
+
+## Estructura del proyecto
+
+```txt
+src/
+├─ config/      Configuración global.
+├─ data/        Mapas, entidades y diálogos.
+├─ engine/      DOM, input, loop, cámara y colisiones.
+├─ render/      Dibujo de mapa, entidades e interfaz.
+├─ state/       Estado inicial del juego.
+└─ systems/     Movimiento, interacción, objetos y reglas jugables.
+```
 
 ## Controles
 
@@ -44,21 +78,21 @@ npm run preview
 
 ## Visión del proyecto
 
-La idea no es hacer solo una demo técnica, sino construir un juego jugable, entretenido y con identidad propia.
+La idea es construir primero una versión web sólida y después migrar a Android con una base ordenada.
 
-La estructura futura recomendada:
+Camino recomendado:
 
 1. Prototipo web funcional.
-2. Separación en módulos: jugador, mapa, NPC, diálogos, inventario, misiones.
-3. Reemplazo del dibujo por sprites reales pixel-art.
-4. Sistema de mapas tipo aldea, bosque, ruta, cueva y santuario.
-5. Sistema de combate o desafíos.
-6. Guardado local.
-7. Migración a Android usando una capa webview/Capacitor o empaquetado equivalente.
+2. Separación modular permanente.
+3. Sprites reales pixel-art.
+4. Sistema de mapas: aldea, bosque, ruta, cueva y santuario.
+5. Inventario, misiones y progresión.
+6. Combate o desafíos.
+7. Guardado local.
+8. Empaquetado para Android.
 
 ## Próximas tareas
 
-- Separar el código de `main.js` en módulos.
 - Agregar pantalla de inicio.
 - Agregar transición entre mapas.
 - Agregar inventario.
