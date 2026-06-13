@@ -1,0 +1,139 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f9fafb;
+  background: #050816;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #172554 0, #050816 55%, #020617 100%);
+}
+
+#app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  place-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+#game {
+  width: min(100vw - 32px, 960px);
+  max-height: 70vh;
+  aspect-ratio: 16 / 9;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 4px solid #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  background: #111827;
+}
+
+#hud {
+  width: min(100vw - 32px, 960px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.76);
+  backdrop-filter: blur(10px);
+}
+
+#hud div {
+  display: grid;
+  gap: 3px;
+}
+
+#quest,
+.keys {
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.keys {
+  text-align: right;
+}
+
+#touch-controls {
+  width: min(100vw - 32px, 960px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.dpad {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.dpad > div {
+  display: flex;
+  gap: 4px;
+}
+
+button {
+  width: 54px;
+  height: 54px;
+  border: 2px solid #f8fafc;
+  border-radius: 12px;
+  background: #1e293b;
+  color: #f8fafc;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.25);
+}
+
+button:active,
+button.pressed {
+  transform: translateY(2px);
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.25);
+  background: #334155;
+}
+
+#action-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+  background: #7c2d12;
+}
+
+@media (min-width: 900px) and (pointer: fine) {
+  #touch-controls {
+    opacity: 0.35;
+  }
+}
+
+@media (max-height: 620px) {
+  #app {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  #hud {
+    display: none;
+  }
+
+  button {
+    width: 46px;
+    height: 46px;
+  }
+
+  #action-button {
+    width: 60px;
+    height: 60px;
+  }
+}
