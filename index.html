@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#111827" />
+    <title>Indie8Bits</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="game" width="320" height="180" aria-label="Juego Indie8Bits"></canvas>
+      <section id="hud">
+        <div>
+          <strong>Indie8Bits</strong>
+          <span id="quest">Explora la aldea y habla con el anciano.</span>
+        </div>
+        <div class="keys">
+          <span>PC: WASD/Flechas</span>
+          <span>Acción: E / Enter</span>
+        </div>
+      </section>
+      <section id="touch-controls" aria-label="Controles táctiles">
+        <div class="dpad">
+          <button data-dir="up">▲</button>
+          <div>
+            <button data-dir="left">◀</button>
+            <button data-dir="down">▼</button>
+            <button data-dir="right">▶</button>
+          </div>
+        </div>
+        <button id="action-button">A</button>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
