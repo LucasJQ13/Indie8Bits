@@ -37,8 +37,9 @@ function movePlayer(state, dx, dy, dt) {
 
 function tryMoveAxis(state, axisName, amount) {
   const next = { ...state.player, [axisName]: state.player[axisName] + amount };
+  const blockers = [...state.npcs, ...state.props.filter((prop) => prop.solid)];
 
-  if (!isSolidAtRect(next) && !collidesWithAny(next, state.npcs)) {
+  if (!isSolidAtRect(next) && !collidesWithAny(next, blockers)) {
     state.player[axisName] += amount;
   }
 }
