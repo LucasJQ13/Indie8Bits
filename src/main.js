@@ -1,10 +1,13 @@
+import { props } from './data/props.js';
 import { VIEW_H, VIEW_W } from './config/gameConfig.js';
 import { getCamera } from './engine/camera.js';
 import { getDom } from './engine/dom.js';
 import { startGameLoop } from './engine/gameLoop.js';
 import { createInput } from './engine/input.js';
 import { drawEntities } from './render/drawEntities.js';
+import { drawAtmosphere } from './render/drawLighting.js';
 import { drawMap } from './render/drawMap.js';
+import { drawProps } from './render/drawProps.js';
 import { drawDialog } from './render/drawUi.js';
 import { createGameState } from './state/createGameState.js';
 import { updateCollectibles } from './systems/collectibles.js';
@@ -29,7 +32,9 @@ function draw() {
   dom.ctx.clearRect(0, 0, VIEW_W, VIEW_H);
 
   drawMap(dom.ctx, camera);
+  drawProps(dom.ctx, props, camera);
   drawEntities(dom.ctx, state, camera);
+  drawAtmosphere(dom.ctx, camera, props);
   drawDialog(dom.ctx, state.dialog);
 }
 
