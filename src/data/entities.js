@@ -1,6 +1,6 @@
 export const playerStart = {
-  x: 80,
-  y: 80,
+  x: 96,
+  y: 96,
   w: 12,
   h: 14,
   speed: 72,
